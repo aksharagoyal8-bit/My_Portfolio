@@ -23,6 +23,20 @@
         .border-navy {
             border-color: #1a0c89;
         }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .animate-slide-up {
+            animation: slideUp 0.8s ease-out forwards;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900 leading-relaxed">
@@ -36,19 +50,29 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#" class="text-gray-600 hover:text-navy px-3 py-2 text-sm font-semibold transition-colors">Home</a>
+                        <a href="index.html" class="text-navy px-3 py-2 text-sm font-bold transition-colors">Home</a>
                         <a href="#about" class="text-gray-600 hover:text-navy px-3 py-2 text-sm font-semibold transition-colors">About</a>
-                        <a href="#" class="text-gray-600 hover:text-navy px-3 py-2 text-sm font-semibold transition-colors">Portfolio</a>
-                        <a href="#" class="text-gray-600 hover:text-navy px-3 py-2 text-sm font-semibold transition-colors">Blog</a>
-                        <button class="ml-4 bg-navy text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-blue-800 transition-all shadow-lg shadow-blue-900/20 active:scale-95">Let's Talk</button>
+                        <a href="projects.html" class="text-gray-600 hover:text-navy px-3 py-2 text-sm font-semibold transition-colors">Portfolio</a>
+                        <a href="blog.html" class="text-gray-600 hover:text-navy px-3 py-2 text-sm font-semibold transition-colors">Blog</a>
+                        <a href="contact.html" class="ml-4 bg-navy text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-blue-800 transition-all shadow-lg shadow-blue-900/20 active:scale-95 text-center">Let's Talk</a>
                     </div>
                 </div>
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button class="text-gray-600 hover:text-navy">
+                    <button id="menu-btn" class="text-gray-600 hover:text-navy focus:outline-none">
                         <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="index.html" class="block text-navy px-3 py-3 text-base font-bold">Home</a>
+                <a href="index.html#about" class="block text-gray-600 hover:text-navy px-3 py-3 text-base font-semibold">About</a>
+                <a href="projects.html" class="block text-gray-600 hover:text-navy px-3 py-3 text-base font-semibold">Portfolio</a>
+                <a href="blog.html" class="block text-gray-600 hover:text-navy px-3 py-3 text-base font-semibold">Blog</a>
+                <a href="contact.html" class="block bg-navy text-white px-3 py-4 rounded-xl text-center text-base font-bold mt-4">Let's Talk</a>
             </div>
         </div>
     </nav>
@@ -71,7 +95,7 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row items-center gap-4 pt-4 justify-center lg:justify-start">
-                    <button class="w-full sm:w-auto bg-navy text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-800 transition-all shadow-xl shadow-blue-900/30">View My Work</button>
+                    <a href="projects.html" class="w-full sm:w-auto bg-navy text-center text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-800 transition-all shadow-xl shadow-blue-900/30">View My Work</a>
                     <div class="flex gap-6 mt-4 sm:mt-0 text-3xl">
                         <a href="https://github.com/aksharagoyal8-bit" target="_blank" class="text-gray-400 hover:text-gray-900 transition-colors">
                             <i class="fa-brands fa-github"></i>
@@ -99,12 +123,110 @@
         </div>
     </main>
 
+    <!-- Skills Section -->
+    <section class="py-20 bg-white opacity-0 animate-slide-up" style="animation-delay: 0.2s;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-black text-navy mb-4">TECHNICAL SKILLS</h2>
+                <div class="h-1.5 w-20 bg-navy mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Skill 1 -->
+                <div class="p-8 bg-gray-50 rounded-2xl text-center hover:shadow-xl transition-shadow group border border-transparent hover:border-navy/10">
+                    <i class="fa-brands fa-python text-5xl text-navy mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-gray-800">Python</h3>
+                    <p class="text-sm text-gray-500 mt-2">Data Science & Automation</p>
+                </div>
+                <!-- Skill 2 -->
+                <div class="p-8 bg-gray-50 rounded-2xl text-center hover:shadow-xl transition-shadow group border border-transparent hover:border-navy/10">
+                    <i class="fa-brands fa-js text-5xl text-navy mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-gray-800">JavaScript</h3>
+                    <p class="text-sm text-gray-500 mt-2">Modern Web Development</p>
+                </div>
+                <!-- Skill 3 -->
+                <div class="p-8 bg-gray-50 rounded-2xl text-center hover:shadow-xl transition-shadow group border border-transparent hover:border-navy/10">
+                    <i class="fa-brands fa-react text-5xl text-navy mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-gray-800">React</h3>
+                    <p class="text-sm text-gray-500 mt-2">Frontend Frameworks</p>
+                </div>
+                <!-- Skill 4 -->
+                <div class="p-8 bg-gray-50 rounded-2xl text-center hover:shadow-xl transition-shadow group border border-transparent hover:border-navy/10">
+                    <i class="fa-solid fa-code text-5xl text-navy mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-gray-800">C++</h3>
+                    <p class="text-sm text-gray-500 mt-2">Problem Solving & DSA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl sm:text-4xl font-black text-navy mb-2">FEATURED PROJECTS</h2>
+                    <div class="h-1.5 w-16 bg-navy rounded-full"></div>
+                </div>
+                <a href="projects.html" class="text-navy font-bold hover:underline">View All Projects <i class="fa-solid fa-arrow-right ml-2"></i></a>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group">
+                    <div class="h-64 bg-gray-200 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-navy/20 group-hover:bg-navy/0 transition-colors duration-500"></div>
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000" alt="Project 1" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-3 py-1 bg-navy/5 text-navy text-xs font-bold rounded-full uppercase tracking-wider">Web App</span>
+                            <span class="px-3 py-1 bg-navy/5 text-navy text-xs font-bold rounded-full uppercase tracking-wider">React</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Eco-Track Dashboard</h3>
+                        <p class="text-gray-600 mb-6 font-light">A sustainability monitoring platform built with React and Tailwind CSS to track carbon footprints.</p>
+                        <a href="#" class="inline-flex items-center font-bold text-navy hover:gap-2 transition-all">
+                            Case Study <i class="fa-solid fa-chevron-right text-xs ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group">
+                    <div class="h-64 bg-gray-200 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-navy/20 group-hover:bg-navy/0 transition-colors duration-500"></div>
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1000" alt="Project 2" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-3 py-1 bg-navy/5 text-navy text-xs font-bold rounded-full uppercase tracking-wider">Python</span>
+                            <span class="px-3 py-1 bg-navy/5 text-navy text-xs font-bold rounded-full uppercase tracking-wider">AI/ML</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Structure-Sense AI</h3>
+                        <p class="text-gray-600 mb-6 font-light">An AI-driven tool for structural health monitoring, combining civil engineering with machine learning.</p>
+                        <a href="#" class="inline-flex items-center font-bold text-navy hover:gap-2 transition-all">
+                            Case Study <i class="fa-solid fa-chevron-right text-xs ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Simple Footer -->
     <footer class="border-t border-gray-100 bg-white py-12 mt-20">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <p class="text-gray-400 font-medium">&copy; 2026 Akshara Goyal. Built with precision and passion.</p>
         </div>
     </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 </html>

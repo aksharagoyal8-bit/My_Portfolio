@@ -1,49 +1,232 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MyPortFolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" >
-    <link rel="stylesheet" href="style.css">
+    <title>Akshara Goyal | Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .text-navy {
+            color: #1a0c89;
+        }
+        .bg-navy {
+            background-color: #1a0c89;
+        }
+        .border-navy {
+            border-color: #1a0c89;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .animate-slide-up {
+            animation: slideUp 0.8s ease-out forwards;
+        }
+    </style>
 </head>
-<body>
-    <div class="container">
-        <div class="inner">
-    
-        <div class="navbar">
-    <p class="logo">AKSHARA.</p>
-    
-    <a>Home</a>
-    <a>About</a>
-    <a>Portfolio</a>
-    <a>Blog</a>
-    <button class="bu">Let's Talk</button>
-    
-    </div>
-    
-    <header>
-<div class="spac">
-    <p class="na">Hi,I am Akshara Goyal! </p>
-    <p class="bold">SOWFTWARE     DEVELOPER</p>
-</div>
-</header>
-<div class="hulu">
-<p class="tex">Akshara Goyal is a dedicated civil engineering student at Punjab Engineering College, Chandigarh, with a growing passion for technology and software development. She is an aspiring software engineer who enjoys exploring coding and building practical solutions. Alongside her academics, she actively participates in entrepreneurship initiatives, reflecting her innovative mindset. She is driven to continuously learn and evolve in the tech domain.</p>
-    <img src="agimg.jpg" alt="image of akshara" height="600px" width="500px"/>
-    </div>
-    <footer>
-        <a href="https://github.com/aksharagoyal8-bit" target="_blank">
-            <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/akshara-goyal23/" target="_blank">
-            <i class="fa-brands fa-linkedin"></i>
-        </a>
+<body class="bg-gray-50 text-gray-900 leading-relaxed">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-extrabold tracking-tighter text-gray-400">AKSHARA<span class="text-navy">.</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-navy px-3 py-2 text-sm font-bold transition-colors">Home</a>
+                        <a href="#about" class="text-gray-600 hover:text-navy px-3 py-2 text-sm font-semibold transition-colors">About</a>
+                        <a href="projects.html" class="text-gray-600 hover:text-navy px-3 py-2 text-sm font-semibold transition-colors">Portfolio</a>
+                        <a href="blog.html" class="text-gray-600 hover:text-navy px-3 py-2 text-sm font-semibold transition-colors">Blog</a>
+                        <a href="contact.html" class="ml-4 bg-navy text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-blue-800 transition-all shadow-lg shadow-blue-900/20 active:scale-95 text-center">Let's Talk</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-600 hover:text-navy focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="index.html" class="block text-navy px-3 py-3 text-base font-bold">Home</a>
+                <a href="index.html#about" class="block text-gray-600 hover:text-navy px-3 py-3 text-base font-semibold">About</a>
+                <a href="projects.html" class="block text-gray-600 hover:text-navy px-3 py-3 text-base font-semibold">Portfolio</a>
+                <a href="blog.html" class="block text-gray-600 hover:text-navy px-3 py-3 text-base font-semibold">Blog</a>
+                <a href="contact.html" class="block bg-navy text-white px-3 py-4 rounded-xl text-center text-base font-bold mt-4">Let's Talk</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
+            
+            <!-- Content Left -->
+            <div class="lg:w-1/2 space-y-8 text-center lg:text-left order-2 lg:order-1">
+                <div class="space-y-2">
+                    <p class="text-xl sm:text-2xl font-semibold text-gray-500 tracking-wide animate-fade-in">Hi, I am Akshara Goyal!</p>
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-navy leading-none tracking-tight">
+                        SOFTWARE<br>DEVELOPER
+                    </h1>
+                </div>
+                
+                <p id="about" class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                    Akshara Goyal is a dedicated civil engineering student at <span class="font-semibold text-navy">Punjab Engineering College, Chandigarh</span>, with a growing passion for technology and software development. She is an aspiring software engineer who enjoys exploring coding and building practical solutions. Alongside her academics, she actively participates in entrepreneurship initiatives, reflecting her innovative mindset.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center gap-4 pt-4 justify-center lg:justify-start">
+                    <a href="projects.html" class="w-full sm:w-auto bg-navy text-center text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-800 transition-all shadow-xl shadow-blue-900/30">View My Work</a>
+                    <div class="flex gap-6 mt-4 sm:mt-0 text-3xl">
+                        <a href="https://github.com/aksharagoyal8-bit" target="_blank" class="text-gray-400 hover:text-gray-900 transition-colors">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/akshara-goyal23/" target="_blank" class="text-navy hover:text-blue-900 transition-colors">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Right -->
+            <div class="lg:w-1/2 order-1 lg:order-2 flex justify-center">
+                <div class="relative group">
+                    <!-- Background Accent -->
+                    <div class="absolute -inset-4 bg-navy/5 rounded-[2rem] blur-2xl group-hover:bg-navy/10 transition-all duration-500"></div>
+                    
+                    <!-- Image Container -->
+                    <div class="relative rounded-[2rem] overflow-hidden border-8 border-white shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+                        <img src="agimg.jpg" alt="Akshara Goyal" class="w-[350px] sm:w-[450px] lg:w-[500px] h-auto object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Skills Section -->
+    <section class="py-20 bg-white opacity-0 animate-slide-up" style="animation-delay: 0.2s;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-black text-navy mb-4">TECHNICAL SKILLS</h2>
+                <div class="h-1.5 w-20 bg-navy mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Skill 1 -->
+                <div class="p-8 bg-gray-50 rounded-2xl text-center hover:shadow-xl transition-shadow group border border-transparent hover:border-navy/10">
+                    <i class="fa-brands fa-python text-5xl text-navy mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-gray-800">Python</h3>
+                    <p class="text-sm text-gray-500 mt-2">Data Science & Automation</p>
+                </div>
+                <!-- Skill 2 -->
+                <div class="p-8 bg-gray-50 rounded-2xl text-center hover:shadow-xl transition-shadow group border border-transparent hover:border-navy/10">
+                    <i class="fa-brands fa-js text-5xl text-navy mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-gray-800">JavaScript</h3>
+                    <p class="text-sm text-gray-500 mt-2">Modern Web Development</p>
+                </div>
+                <!-- Skill 3 -->
+                <div class="p-8 bg-gray-50 rounded-2xl text-center hover:shadow-xl transition-shadow group border border-transparent hover:border-navy/10">
+                    <i class="fa-brands fa-react text-5xl text-navy mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-gray-800">React</h3>
+                    <p class="text-sm text-gray-500 mt-2">Frontend Frameworks</p>
+                </div>
+                <!-- Skill 4 -->
+                <div class="p-8 bg-gray-50 rounded-2xl text-center hover:shadow-xl transition-shadow group border border-transparent hover:border-navy/10">
+                    <i class="fa-solid fa-code text-5xl text-navy mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-gray-800">C++</h3>
+                    <p class="text-sm text-gray-500 mt-2">Problem Solving & DSA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl sm:text-4xl font-black text-navy mb-2">FEATURED PROJECTS</h2>
+                    <div class="h-1.5 w-16 bg-navy rounded-full"></div>
+                </div>
+                <a href="projects.html" class="text-navy font-bold hover:underline">View All Projects <i class="fa-solid fa-arrow-right ml-2"></i></a>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group">
+                    <div class="h-64 bg-gray-200 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-navy/20 group-hover:bg-navy/0 transition-colors duration-500"></div>
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000" alt="Project 1" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-3 py-1 bg-navy/5 text-navy text-xs font-bold rounded-full uppercase tracking-wider">Web App</span>
+                            <span class="px-3 py-1 bg-navy/5 text-navy text-xs font-bold rounded-full uppercase tracking-wider">React</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Eco-Track Dashboard</h3>
+                        <p class="text-gray-600 mb-6 font-light">A sustainability monitoring platform built with React and Tailwind CSS to track carbon footprints.</p>
+                        <a href="#" class="inline-flex items-center font-bold text-navy hover:gap-2 transition-all">
+                            Case Study <i class="fa-solid fa-chevron-right text-xs ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group">
+                    <div class="h-64 bg-gray-200 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-navy/20 group-hover:bg-navy/0 transition-colors duration-500"></div>
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1000" alt="Project 2" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-3 py-1 bg-navy/5 text-navy text-xs font-bold rounded-full uppercase tracking-wider">Python</span>
+                            <span class="px-3 py-1 bg-navy/5 text-navy text-xs font-bold rounded-full uppercase tracking-wider">AI/ML</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Structure-Sense AI</h3>
+                        <p class="text-gray-600 mb-6 font-light">An AI-driven tool for structural health monitoring, combining civil engineering with machine learning.</p>
+                        <a href="#" class="inline-flex items-center font-bold text-navy hover:gap-2 transition-all">
+                            Case Study <i class="fa-solid fa-chevron-right text-xs ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simple Footer -->
+    <footer class="border-t border-gray-100 bg-white py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-400 font-medium">&copy; 2026 Akshara Goyal. Built with precision and passion.</p>
+        </div>
     </footer>
-    </div>
-    </div>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
 </body>
 </html>
